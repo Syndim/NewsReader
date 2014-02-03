@@ -35,7 +35,9 @@
     var cmtResult, comment, hotCmtResult, template, _i, _len;
     for (_i = 0, _len = comments.length; _i < _len; _i++) {
       comment = comments[_i];
-      comments = JSON.parse(atob(comment).substr(6));
+      if (comment) {
+        comments = JSON.parse(atob(comment).substr(6));
+      }
     }
     template = Handlebars.compile(commentTemplate);
     cmtResult = [
