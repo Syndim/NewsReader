@@ -75,7 +75,7 @@ WSGI_APPLICATION = 'newspaper.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.mysql',
+        'ENGINE': 'mysql_pymysql',
         'NAME': 'newspaper',
         'USER': 'root',
         'PASSWORD': '',
