@@ -1,0 +1,664 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="X-UA-Compatible" content="IE=EmulateIE9" >
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<script type="text/javascript" src="http://static.cnbetacdn.com/assets/js/jquery.js"></script>
+<title>中国大四学生重新设计双插入U盘获红点奖_USB 通用串行总线_cnBeta.COM</title>
+<meta http-equiv="content-language" content="zh-cn" />
+<meta http-equiv="imagetoolbar" content="false" />
+<meta name="keywords" content="USB 通用串行总线,中国大四学生重新设计双插入U盘获红点奖,cnBeta" />
+<meta name="description" content="设计让世界更美好，在美观的同时方便了生活。但并不是所有的设计都方便用户，比如遭到广泛吐槽的插座和 USB 盘。相信大家都经历过这样的事情，U 盘正反两面难以区分，常常要插两次才能插上，真是反人类的典型设计。" />
+<meta name="resource-type"content="document" />
+<meta name="copyright" content="(c)2003-2013 cnBeta.COM" />
+<meta name="author" content="cnBeta" />
+<meta name="robots" content="index, follow" />
+<meta name="revisit-after" content="1 days" />
+<meta name="rating" content="general" />
+<link rel="shortcut icon" href="/favicon.ico" type="image/x-icon" />
+<link rel="alternate" type="application/rss+xml" title="RSS 2.0" href="/backend.php" />
+<link rel="alternate" type="application/atom+xml" title="ATOM 1.0" href="/backend.php?atom" />
+<link rel="stylesheet" type="text/css" href="http://static.cnbetacdn.com/assets/css/base.css?v=20140101" />    <link rel="stylesheet" type="text/css" href="http://static.cnbetacdn.com/assets/css/front.css?v=20140101" />	<link rel="stylesheet" type="text/css" href="http://static.cnbetacdn.com/assets/css/jquery.fancybox.min.css?v=20140101" /><script>
+var GV = {
+    JS_ROOT: 'http://static.cnbetacdn.com/assets/js/',
+    JS_VERSION: '20140101',
+    TOKEN: 'e53ed7d56c5c2dcde10131fc73c5a1e1ca48e6b2',
+    URL: {
+        QZONE:"http://open.qzone.qq.com/like?url=http%3A%2F%2Fuser.qzone.qq.com%2F706290416&width=120&height=22&type=button_num",
+        SINA:"http://widget.weibo.com/relationship/followbutton.php?language=zh_cn&width=136&height=22&uid=2769378403&style=2&btn=red&dpc=1",
+        INDEX:{ALLNEWS: "/more.htm"},
+        ARTICLE:{},
+        TOPIC:{},
+        ARGUE:{},
+        LOGIN:"/user/login",
+        LOGOUT:"/user/logout"
+    },
+    USER:{ID:0,NICK:"",ICON:""}
+};
+</script>
+<!--[if lt IE 9]><script src="http://static.cnbetacdn.com/assets/base/html5.js?t=20140101" charset="utf-8"></script><![endif]-->
+<script src="http://static.cnbetacdn.com/assets/js/cb.js?t=20140101" charset="utf-8"></script></head>
+<body>
+<div class="wrapper">
+	<header class="global_head">
+		<nav class="tiny_bar">
+            <div class="cb_login" id="cb_login"></div>
+			<ul class="cb_rss">
+                <li><iframe id="sina_follow" src="" allowtransparency="true" scrolling="no" border="0" frameborder="0" align="absmiddle" style="width:115px;height:22px;border:none;overflow:hidden;"></iframe></li>
+				<li><iframe id="qzone_follow" src="" allowtransparency="true" scrolling="no" border="0" frameborder="0" align="absmiddle" style="width:115px;height:22px;border:none;overflow:hidden;"></iframe></li>
+				<li class="a"><a class="feed" href="/backend.php" target="_blank" title="订阅本站资讯">资讯</a></li>
+				<li class="a"><a class="feed" href="/commentrss.php" target="_blank" title="订阅本站精彩评论">评论</a></li>
+			</ul>
+		</nav>
+		<h1 class="cnbeta_logo"><a href="http://www.cnbeta.com">cnBeta.COM_中文业界资讯站</a></h1>
+		<nav class="global_navi">
+            <div id="cb_search">
+                <form action="http://so.cnbeta.com/cse/search" target="_blank">
+                <input name="s" type="hidden" value="14146556968177638016">
+                <input type="text" name="q" size="30" class="search_key">
+                <input type="submit" value=""class="search_btn"></form>
+            </div>
+			<ul class="main_navi">
+                                <li   >
+                    <a href="http://www.cnbeta.com/"   >首页</a>
+                </li>
+                                <li   >
+                    <a href="http://www.cnbeta.com/deliver" target="_blank" style="color:#ffcc00;" >投稿</a>
+                </li>
+                                <li   >
+                    <a href="http://job.cnbeta.com/" target="_blank"  >招聘</a>
+                </li>
+                                <li   >
+                    <a href="http://www.cnbeta.com/topics/306.htm"   >互动</a>
+                </li>
+                                <li   >
+                    <a href="http://www.cnbeta.com/topics.htm"   >主题</a>
+                </li>
+                                <li   >
+                    <a href="http://www.cnbeta.com/top10.htm"   >排行</a>
+                </li>
+                                <li   >
+                    <a href="http://www.cnbeta.com/about/index.htm"   >关于</a>
+                </li>
+                			</ul>
+            			<ul class="sub_navi">
+                                <li  >
+                    <a href="http://www.cnbeta.com/topics/9.htm"   >苹果</a>
+                </li>
+                                <li  >
+                    <a href="http://www.cnbeta.com/topics/52.htm"   >Google</a>
+                </li>
+                                <li  >
+                    <a href="http://www.cnbeta.com/topics/305.htm"   >视点观察</a>
+                </li>
+                                <li  >
+                    <a href="http://www.cnbeta.com/topics/448.htm"   >科学探索</a>
+                </li>
+                                <li  >
+                    <a href="http://www.cnbeta.com/topics/487.htm"   >小米</a>
+                </li>
+                                <li  >
+                    <a href="http://www.cnbeta.com/topics/70.htm"   >硬件</a>
+                </li>
+                                <li  >
+                    <a href="http://www.cnbeta.com/topics/353.htm"   >B2C</a>
+                </li>
+                                <li  >
+                    <a href="http://www.cnbeta.com/topics/371.htm"   >三星</a>
+                </li>
+                                <li  >
+                    <a href="http://www.cnbeta.com/topics/453.htm"   >人物</a>
+                </li>
+                                <li  >
+                    <a href="http://www.cnbeta.com/topics/243.htm"   >手机</a>
+                </li>
+                                <li  >
+                    <a href="http://www.cnbeta.com/topics/147.htm"   >诺基亚</a>
+                </li>
+                                <li  >
+                    <a href="http://www.cnbeta.com/topics/422.htm"   >美国</a>
+                </li>
+                                <li  >
+                    <a href="http://www.cnbeta.com/topics/436.htm"   >魅族</a>
+                </li>
+                                <li  >
+                    <a href="http://www.cnbeta.com/topics/39.htm"   >游戏</a>
+                </li>
+                                <li  >
+                    <a href="http://www.cnbeta.com/topics/469.htm"   >3D</a>
+                </li>
+                                <li  >
+                    <a href="http://www.cnbeta.com/topics/197.htm"   >索尼</a>
+                </li>
+                                <li  >
+                    <a href="http://www.cnbeta.com/topics/144.htm"   >Ultrabook</a>
+                </li>
+                                <li  >
+                    <a href="http://www.cnbeta.com/topics/326.htm"   >Glass</a>
+                </li>
+                                <li  >
+                    <a href="http://www.cnbeta.com/topics/506.htm"   >Windows 8.1</a>
+                </li>
+                                <li  >
+                    <a href="http://www.cnbeta.com/topics/439.htm"   >HTC</a>
+                </li>
+                                <li  >
+                    <a href="http://www.cnbeta.com/topics/4.htm"   >微软</a>
+                </li>
+                                <li  >
+                    <a href="http://www.cnbeta.com/topics/184.htm"   >WP</a>
+                </li>
+                                <li  >
+                    <a href="http://www.cnbeta.com/topics/444.htm"   >Android</a>
+                </li>
+                                <li  >
+                    <a href="http://www.cnbeta.com/topics/91.htm"   >Yahoo!</a>
+                </li>
+                                <li  >
+                    <a href="http://www.cnbeta.com/topics/32.htm"   >Intel</a>
+                </li>
+                                <li  >
+                    <a href="http://www.cnbeta.com/topics/138.htm"   >通信技术</a>
+                </li>
+                                <li  >
+                    <a href="http://www.cnbeta.com/topics/331.htm"   >华为</a>
+                </li>
+                                <li  >
+                    <a href="http://www.cnbeta.com/topics/464.htm"   >iPad</a>
+                </li>
+                                <li  >
+                    <a href="http://www.cnbeta.com/topics.htm"   >更多...</a>
+                </li>
+                			</ul>
+            <ul class="sub_navi_bottom"></ul>
+            <span class="nav_arrow"></span>
+            		</nav>
+	</header>
+	<section style="text-align:center;">
+    <!--topbanner start--><!-- 广告位：CBV4-980x90 文章页页头 -->
+<script type="text/javascript" >BAIDU_CLB_SLOT_ID = "693405";</script>
+<script type="text/javascript" src="http://cbjs.baidu.com/js/o.js"></script><!--topbanner end-->
+</section>
+<div id="left_art" class="left_art left_art_short">
+	<div class="left_art_box dig_box" id="dig_btn">
+        <a rel="nofollow" title="顶一个" class="" href="javascript:void(0);"><span class="dig_label">我顶</span><br><em>--</em></a>
+    </div>
+	<div class="left_art_box fav_box" id="favorite_btn" style="display:none">
+        <a rel="nofollow" title="收藏本文" class="" href="javascript:void(0);"><span class="favorite_label">收藏</span><br><em>--</em></a>
+    </div>
+	<div class="left_art_box cmt_box"><a onclick="return scrollToPosition('comment');" href="javascript:void(0);">评论<br><em class="comment_num">--</em></a></div>
+</div>
+<section class="main_content">
+    <section class="main_content_left">
+        <article class="cb_box article">
+            <div class="body">
+                <header>
+                    <h2 id="news_title">中国大四学生重新设计双插入U盘获红点奖</h2>
+                    <a alt="446" id="sign"></a>
+                    <div class="title_bar">
+                        <span class="date">2014-01-28 06:48:39</span>
+                        <span class="counter"><span id="view_num"></span> 次阅读</span>
+                        <span class="where">
+                            稿源：weiphone</span>
+                        <span class="discuss"><a onclick="return scrollToPosition('comment');" href="javascript:void(0);"><font style="font-size:12px;color:#c00;" class="comment_num"></font></a> 条评论</span>
+                    </div>
+                </header>
+                <div class="clearfix"></div>
+                <section class="article_content">
+                    <div class="introduction">
+                                                <div style="float:right;margin-left:10px;margin-top:5px;margin-bottom:10px;margin-right:-20px;"><a href="/topics/446.htm" target="_blank"><img title="USB 通用串行总线" src="http://static.cnbetacdn.com/topics/2010-4-9 9-50-50.gif" /></a></div>
+                                                <p><strong>感谢<a href="http://www.xiaopin5.com/" target="_blank">品</a>的投递</strong><br/></p><p>设计让世界更美好，在美观的同时方便了生活。但并不是所有的设计都方便用户，比如遭到广泛吐槽的插座和 USB 盘。相信大家都经历过这样的事情，U 盘正反两面难以区分，常常要插两次才能插上，真是反人类的典型设计。</p>                    </div>
+                    <div class="content"><p class="f_center"><img src="http://static.cnbetacdn.com/newsimg/2014/0128/25_1iVK8Wo22.jpg" title="2-TOP – Dual Sided USB Flash Drive by Xing Xing Deng &amp; Shurun Shen"   /></p><p class="f_center"><img src="http://static.cnbetacdn.com/newsimg/2014/0128/25_1iVK8_tip.jpg" title="2_top_usb2"   /></p><p class="f_center"><img src="http://static.cnbetacdn.com/newsimg/2014/0128/25_1iVK9114Y.jpg" title="2_top_usb3"   /></p><p class="f_center"><img src="http://static.cnbetacdn.com/newsimg/2014/0128/25_1iVK93FZl.jpg" title="2_top_usb4"   /></p><p>幸好，这种反人类设计终于得到纠正。安徽建筑大学工业设计专业大四学生邓兴兴和申书润设计了一款能够两面插入的 U 盘——2-top，并凭借该设计获得了有设计界奥斯卡之称的 2013 年度红点概念奖。</p><p>据了解，这款双面 2-top U 盘接口采用超薄设计，取消了传统的矩形金属框，并且在金手指的两面均封装了金属触点。如此一来，在插入 U 盘时，我们便不需要多次尝试，保证一次成功。</p><p>为什么这两名大四学生会想到重新设计 U 盘？邓兴兴同学说，日常生活中，很多东西用得不顺手，可是大家都去适应它，很少想着改变它。传统的 U 盘是单面使用的，插入接口时，必须按照一定的方向进入，使用起来非常不便。</p></div>
+                    <div class="clear"></div>
+                    <div id="googleAd_afc">
+                    <!-- google custom begin-->
+                    <script charset="utf-8" type="text/javascript">
+                        function google_ad_request_done(google_ads) {
+                            var s = "";
+                            var i;
+                            if(google_ads.length == 0) return;
+                            s += '<div class="gbox830"><div class="gtitle"><a href=\"' + google_info.feedback_url  + '\" target="_blank">Google提供的广告</a></div>'
+                            if(google_ads.length == 1){
+                                s += '<div class="tbox1">' +
+                                '<a href="' + google_ads[0].url + '" target="_blank">' + google_ads[0].line1 + '</a><br />' +
+                                google_ads[0].line2 + "&nbsp;" + google_ads[0].line3 + '<br />' +
+                                '<a href="' + google_ads[0].url + '" target="_blank" class="gaAddress">' + google_ads[0].visible_url + '</a>' + '</div>';
+                            }else if (google_ads.length > 1){
+                                for(i=0; i < google_ads.length; ++i) {
+                                    s += '<div class="tbox">' +
+                                        '<a href="' + google_ads[i].url + '" target="_blank">' + google_ads[i].line1 + '</a>'+"&nbsp;"+
+                                        '<a href="' + google_ads[i].url + '" target="_blank" class="gaAddress">' + google_ads[i].visible_url + '</a><br />' +
+                                        google_ads[i].line2 + "&nbsp;" + google_ads[i].line3 + '<br />' +
+                                        '</div>';
+                                    if (i<google_ads.length) s += "";
+                                }
+                            }
+                            s += '</div>';
+                            document.write(s);
+                            return;
+                        }
+                        google_ad_client = "pub-9066977823953139";
+                        google_ad_output = "js";
+                        google_max_num_ads = "2";
+                        google_ad_type = "text";
+                        google_gl = "CN";
+                        google_language = "zh-CN";
+                        google_encoding = "utf8";
+                        google_ad_channel= "0839583543";
+                        google_feedback = "on";
+                        google_adtest = 'off';
+                        document.write("<scr"+"ipt type=text/javascript src=http://pagead2.googlesyndication.com/pagead/show_ads.js></scr"+"ipt>");
+                    </script>
+                    <!-- google custom end-->
+                    </div>
+                </section>
+                <div class="clearfix"></div>
+                <section style="text-align:center;padding:0px 10px;"">
+                    <!--left1 start--><div class="cbv">
+<p><!-- 广告位：CBV4 580x90 文章页文末 #1 -->
+<script type="text/javascript" >BAIDU_CLB_SLOT_ID = "774209";</script>
+<script type="text/javascript" src="http://cbjs.baidu.com/js/o.js"></script></p>
+<p><!-- 广告位：CBV4 580x90 文章页文末 #3 -->
+<script type="text/javascript" >BAIDU_CLB_SLOT_ID = "842095";</script>
+<script type="text/javascript" src="http://cbjs.baidu.com/js/o.js"></script></p>
+<p><script type="text/javascript" >BAIDU_CLB_SLOT_ID = "611927";</script>
+<script type="text/javascript" src="http://cbjs.baidu.com/js/o.js"></script></p>
+<p>
+<!-- 广告位：CBV4-640x60 文章页文末 #1 -->
+<script type="text/javascript" >BAIDU_CLB_SLOT_ID = "700021";</script>
+<script type="text/javascript" src="http://cbjs.baidu.com/js/o.js"></script></p>
+<p><script type="text/javascript">/*cnBeta文末580*90*/ var cpro_id = 'u792078';</script>
+<script src="http://cpro.baidu.com/cpro/ui/c.js" type="text/javascript"></script></p>
+</div><!--left1 end-->
+                </section>
+                <div class="clearfix" style="margin:0 10px;">
+                    <div class="fl"><span class="author">[责任编辑：ugmbbc]</span></div>
+                    <div class="fr">
+                        <!-- Baidu Button BEGIN -->
+                        <div id="bdshare" class="bdshare_b" style="line-height: 12px;">
+                        <img src="http://bdimg.share.baidu.com/static/images/type-button-3.jpg?cdnversion=20120831" />
+                        <a class="shareCount"></a>
+                        </div>
+                        <!-- Baidu Button END -->
+                    </div>
+                </div>
+                <div class="rating_box clearfix">
+                    <div class="mod h-bd-box">
+                        <div class="hd"><h3>文章打分</h3></div>
+                    </div>
+                    <div id="rating_box" class="bd">
+                        <span class="load"></span>
+                        <div class="fl rating_title">事件<br />人物</div>
+                        <div class="fl rating_body">
+                            <div class="rating_down">
+                                <ul>
+                                    <li title="垃圾中的战斗机,扣5分" data-score="-5"><a class="r-5">-5</a></li>
+                                    <li title="太垃圾了,扣4分" data-score="-4"><a class="r-4">-4</a></li>
+                                    <li title="傻冒新闻,扣3分" data-score="-3"><a class="r-3">-3</a></li>
+                                    <li title="差劲,扣2分" data-score="-2"><a class="r-2">-2</a></li>
+                                    <li title="不怎么样,扣1分" data-score="-1"><a class="r-1">-1</a></li>
+                                    <li title="平淡,0分" data-score="0"><a class="r0">0</a></li>
+                                </ul>
+                            </div>
+                            <div class="rating_up">
+                                <ul>
+                                    <li title="凑合吧,1分" data-score="1"><a class="r1">1</a></li>
+                                    <li title="还可以,2分" data-score="2"><a class="r2">2</a></li>
+                                    <li title="很不错,3分" data-score="3"><a class="r3">3</a></li>
+                                    <li title="太棒了,4分" data-score="4"><a class="r4">4</a></li>
+                                    <li title="太有才了,满分!" data-score="5"><a class="r5">5</a></li>
+                                </ul>
+                            </div>
+                            <div class="rate_num">
+                                <strong>-5</strong><strong>-4</strong><strong>-3</strong><strong>-2</strong><strong>-1</strong><strong>0</strong><strong>1</strong><strong>2</strong><strong>3</strong><strong>4</strong><strong>5</strong>
+                            </div>
+                        </div>
+                        <div class="rated gray">当前平均分: <span>打分后显示</span></div>
+                    </div>
+                </div>
+                <div class="navi">
+                    <div class="mod h-bd-box">
+                        <div class="hd"><h3>大家还在看</h3></div>
+                    </div>
+                    <div class="bd">
+                        <div class="bd_r fr"><div style="width:200px"><a target="_blank" href="http://www.wy.cn/">唯一网络 wy.cn 专业服务器租用托管机柜大带宽 高防服务器</a><br><a target="_blank" href="http://m.cnbeta.com/m">cnBeta.COM 移动版全新改版上线</a></div></div>
+                        <div class="bd_l" id="bfd_box_vav" style="min-height:30px">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </article>
+        <section style="text-align:center;">
+            <!--left2 start--><!-- 广告位：CBV4-662x150 文章页 -->
+<script type="text/javascript" >BAIDU_CLB_SLOT_ID = "685246";</script>
+<script type="text/javascript" src="http://cbjs.baidu.com/js/o.js"></script><!--left2 end-->
+        </section>
+        <section>
+            <a id="comment" name="comment"></a>
+            <nav class="blue_bar">
+                <h4>网友评论</h4>
+                <div class="post_count" style="display:none"></div>
+            </nav>
+            <div class="content_body">
+                <div class="post_commt">
+                    <div class="commt_l">
+                        <input type="hidden" name="tid" value="">
+                        <input type="hidden" name="sid" value="270364">
+                        <input type="hidden" name="nowsubject" value="Re:中国大四学生重新设计双插入U盘获红点奖" />
+                        <div class="hd">
+                            <span id="top_reply_logout" class="login" >
+                                <img src="http://static.cnbetacdn.com/assets/images/user/face.png">
+                                <a id="top_login_link" href="/user/login/popup" data-fancybox-type="iframe" class="logoA"><strong>登录</strong><div class="nav_new"></div></a>
+                            </span>
+                            <span id="top_reply_login" class="login" style="display:none">
+                                <img width="20" height="20" src=""><span></span><a class="quitLogin" data-from="article" href="javascript:void(0)">[退出]</a>
+                            </span>
+                        </div>
+                        <div class="info">
+
+                            <div class="textarea_wraper"><textarea name="nowcomment" title="请输入评论内容" placeholder="请输入评论内容"></textarea></div>
+                                                        <div class="commt_sub">
+                                <div>
+                                    <span class="seccode_box">验证码：<input class="form_input" name="seccode" type="text" title="请输入验证码" align="absmiddle" maxlength="4" />
+                                    <img id="seccode" title="刷新验证码" style="cursor:pointer;vertical-align:middle;" imgshow="0" src="" alt="" /></span>
+                                    <span class="fontsline" id="post_tips"></span>
+                                </div>
+                                <div class="post_sync">
+                                    <ul id="post_sync" class="fl none">
+                                        <li>同步到：</li>
+                                        <li class="sync_item" id="sina_weibo"><label><input type="checkbox" name="post_sync" value="sina">新浪微博</label></li>
+                                        <li class="sync_item" id="qq_weibo"><label><input type="checkbox" name="post_sync" value="qq">腾讯微博</label></li>
+                                    </ul>
+                                    <button id="post_btn" class="submit disabled fr" href="javascript:void(0)"></button>
+                                </div>
+
+                            </div>
+                                                    </div>
+                    </div>
+                    <div class="commt_r">
+                    <!--left3 start--><!-- 广告位：CBV4-250x200 评论框 -->
+<script type="text/javascript" >BAIDU_CLB_SLOT_ID = "685340";</script>
+<script type="text/javascript" src="http://cbjs.baidu.com/js/o.js"></script><!--left3 end-->
+                    </div>
+                    <div class="clear"></div>
+                </div>
+                <div class="commt_list" style="display:none">
+                    <nav>
+                        <span class="new_cmnt">最新评论</span>
+                    </nav>
+                    <div id="J_commt_list">
+                    </div>
+                    <div style="display:none" class="commt_more" id="J_commt_more"><a onclick="return false;" href="javascript:;">显示更多评论</a></div>
+                </div>
+            </div>
+            <div class="white_bottom"></div>
+        </section>
+    </section>
+    <aside class="main_content_right">
+        <section class="hotcomments">
+            <header class="yellow_bar"><h4>最热评论</h4></header>
+            <ul class="yellow_body_v2" id="J_hotcommt_list">
+                <li style="border:none !important"><div class="comContent"><button class='tips_loading' style='width:30px;height:16px;'></button>努力加载中...</div></li>
+            </ul>
+            <div class="yellow_bottom_v2"></div>
+        </section>
+        <section style="text-align:center;">
+        <!--right1 start--><script type="text/javascript"><!--
+google_ad_client = "ca-pub-9066977823953139";
+/* 文章页右300x250 */
+google_ad_slot = "0948614537";
+google_ad_width = 300;
+google_ad_height = 250;
+//-->
+</script>
+<script type="text/javascript"
+src="http://pagead2.googlesyndication.com/pagead/show_ads.js">
+</script><!--right1 end-->
+        </section>
+        <script language="javascript" src="/home/rank/show.htm?t=20140129"></script>
+        <section style="text-align:center;">
+        <!--right2 start--><script type="text/javascript">
+     document.write('<a style="display:none!important" id="tanx-a-mm_10007624_104555_13330265"></a>');
+     tanx_s = document.createElement("script");
+     tanx_s.type = "text/javascript";
+     tanx_s.charset = "gbk";
+     tanx_s.id = "tanx-s-mm_10007624_104555_13330265";
+     tanx_s.async = true;
+     tanx_s.src = "http://p.tanx.com/ex?i=mm_10007624_104555_13330265";
+     tanx_h = document.getElementsByTagName("head")[0];
+     if(tanx_h)tanx_h.insertBefore(tanx_s,tanx_h.firstChild);
+</script><!--right2 end-->
+        </section>
+        		<section class="cber" style="display:none">
+			<header class="blue_bar_v2">招聘</header>
+			<div class="cber_body white_body" id="job_box"></div>
+			<div class="white_bottom_v2"></div>
+		</section>
+        <section style="text-align:center;" id="fixed_body">
+        <!--rightfloat start--><center><script type="text/javascript">
+     document.write('<a style="display:none!important" id="tanx-a-mm_10007624_104555_14616006"></a>');
+     tanx_s = document.createElement("script");
+     tanx_s.type = "text/javascript";
+     tanx_s.charset = "gbk";
+     tanx_s.id = "tanx-s-mm_10007624_104555_14616006";
+     tanx_s.async = true;
+     tanx_s.src = "http://p.tanx.com/ex?i=mm_10007624_104555_14616006";
+     tanx_h = document.getElementsByTagName("head")[0];
+     if(tanx_h)tanx_h.insertBefore(tanx_s,tanx_h.firstChild);
+</script><br><br><!-- 广告位：CBV4-300x250 文章页右 #1 -->
+<div class="cbv">
+<script type="text/javascript" >BAIDU_CLB_SLOT_ID = "693418";</script>
+<script type="text/javascript" src="http://cbjs.baidu.com/js/o.js"></script>
+</div>
+</center><!--rightfloat end-->
+        </section>
+        <section id="fixed_area"></section>
+    </aside>
+    <div class="clear"></div>
+</section>
+<section style="text-align:left;">
+    <!--bottombanner start--><script async src="http://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<ins class="adsbygoogle"
+     style="display:inline-block;width:970px;height:90px"
+     data-ad-client="ca-pub-9066977823953139"
+     data-ad-slot="9606315813"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script><!--bottombanner end-->
+</section>
+<!--ADD 弹出评论框-->
+<div id="pop_reply" class="popup_area" style="display:none;z-index:88;">
+    <div class="hd">
+        <span id="pop_tip" class="fontsline">还能输入<strong>140</strong>字</span>
+        <div class="close" onclick="return $(this).parent().parent().hide()"><a id="pop_reply_close" href="javascript:void(0)">关闭按钮</a></div>
+    </div>
+    <div class="popup_textarea">
+        <div class="popup_textarea_input">
+            <input type="hidden" id="pop_tid" name="pop_tid" value="" />
+            <textarea id="pop_content" name="popup_content" class="popup_textarea_input" placeholder="说点什么"></textarea>
+        </div>
+        <div class="popup_textarea_tool clearfix">
+                        <a href="javascript:void(0)" class="submit_btn" id="pop_submit">立即回复</a>
+            <span class="seccode_box">验证码：<input id="pop_seccode" name="seccode" class="seccode" type="text" title="请输入验证码" align="absmiddle" /><img id="popup_seccode" title="刷新验证码" style="cursor:pointer;vertical-align:middle;" imgshow="0" src="" alt="" /></span>
+                    </div>
+    </div>
+</div>
+<!--ADD-->
+<script type="text/javascript" id="bdshare_js" data="type=tools&amp;uid=1827086" ></script>
+<script type="text/javascript" id="bdshell_js"></script>
+
+	<footer class="copyright">
+        <p>除非特别注明，本站所有文章均不代表本站观点。报道中出现的商标属于其合法持有人。<strong>请遵守理性，宽容，换位思考的原则。</strong></p>
+		<p>合作媒体与供稿人：
+                            <a href="http://thewind.hk/"   >TheWind</a>
+                                            &nbsp;<a href="http://www.apppoo.com/"   >安卓应用谱</a>
+                                            &nbsp;<a href="http://weibo.com/ictech"   >C科技</a>
+                                            &nbsp;<a href="http://news.mydrivers.com/"   >驱动之家</a>
+                                            &nbsp;<a href="http://www.bio360.net/"   >生物360</a>
+                                            &nbsp;<a href="http://google.org.cn/"   >谷奥</a>
+                                            &nbsp;<a href="http://www.weiphone.com/"   >iPhone威锋网</a>
+                                            &nbsp;<a href="http://www.huxiu.com/"   >虎嗅</a>
+                                            &nbsp;<a href="http://www.yseeker.com/"   >品味雅虎</a>
+                <br />                            &nbsp;<a href="http://www.ownlinux.org/"   >Ownlinux</a>
+                                            &nbsp;<a href="http://www.leica.org.cn/"   >中文摄影杂志</a>
+                                            &nbsp;<a href="http://www.geekpark.net/"   >极客公园</a>
+                                            &nbsp;<a href="http://www.macx.cn/"   >MacX</a>
+                                    </p>
+        <p>本站由<a href="http://www.verycloud.cn/" target="_blank">VeryCloud</a>云分发提供CDN加速
+            <span class="sep">|</span> 部分节点提供: <a href="http://www.whozen.com/" target="_blank">互城网络</a>
+            <span class="sep">|</span><a href="http://www.gigelayer.com/" target="_blank">浙岭云擎</a>
+            <span class="sep">|</span><a href="http://www.hypo.cn/" target="_blank">海波网络</a>
+            <span class="sep">|</span><a href="http://www.wy.com.cn/cn2.aspx" target="_blank">唯一网络CN2</a>
+        </p>
+        <p>&copy;2003-2014 cnBeta <a href="http://www.miibeian.gov.cn" target="_blank">浙ICP备11027646号</a>&nbsp;
+        <a href="/about/index.htm" target="_blank">关于我们</a>&nbsp;
+        <a href="/about/cooperation.htm" target="_blank">广告招租</a>&nbsp;
+        <a href="mailto:ugmbbc@gmail.com" target="_blank">报告不适当内容</a></p>
+	    <span class="powered">Powered by CB-TEAM | generate by ceallan</span>
+	</footer>
+    <div class="clear"></div>
+    <!--stat start--><script>
+var _hmt = _hmt || [];
+(function() {
+  var hm = document.createElement("script");
+  hm.src = "//hm.baidu.com/hm.js?4216c57ef1855492a9281acd553f8a6e";
+  var s = document.getElementsByTagName("script")[0]; 
+  s.parentNode.insertBefore(hm, s);
+})();
+</script>
+<script src="http://www.google-analytics.com/urchin.js" type="text/javascript">
+</script>
+<script type="text/javascript">
+_uacct = "UA-435607-2";
+urchinTracker();
+</script><!--stat end-->
+    <!--返回顶部-->
+    <div class="goToTop" id="backToTop"><a rel="nofollow" href="javascript:void(0)" class="toTop"></a></div>
+</div>
+<script charset="utf-8" type="text/javascript">
+//<![CDATA[
+CB.use('jquery','common',function(){
+    $("#qzone_follow").attr("src", GV.URL.QZONE);
+    $("#sina_follow").attr("src", GV.URL.SINA);
+});
+//]]>
+</script>
+<script charset="utf-8" type="text/javascript">
+//<![CDATA[
+GV.COMMENTS = {CMNTDICT:{},CMNTLIST:{},HOTLIST:{},PAGE:1,MORENUM:100,SHOWNUM:0,MOREPAGE:1,POSTED:0,CLICKED:0};
+GV.DETAIL = {SID:"270364",POST_URL:"/comment",POST_VIEW_URL:"/cmt",SN:"484df"};
+CB.use('cbcode','lazyload','article','fancybox','lagou',function(){
+    // bind logout
+    $(".quitLogin").click(function(){
+        var from = $(this).attr('data-from');
+        $.getJSON(GV.URL.LOGOUT+'?jsoncallback=?',{'type':'pop'},function(){
+            GV.USER.ID=0;
+            $("#top_reply_login").hide();$("#top_reply_logout").show();
+			if($("#favorite_btn").length > 0)$("#favorite_btn").hide();
+            $("#post_sync").addClass("none").find("input[name=post_sync]").attr("checked", false);
+        });
+    });
+	$.cbPublish(".post_commt");
+    if($(".content").length > 0){
+        $(".content img").lazyload({effect:"fadeIn"});
+    }
+    $("#top_login_link").fancybox({
+        padding:0,
+        content: CB.tmpl(popLoginTp,{}),
+        helpers:{
+            overlay:{closeClick:false}
+        },
+        afterShow:function(){if($('.connections').length){$('.connections').find('a').click(windowOpen);}}
+	});
+});
+
+(function(d,t) {
+  window.huaban_minWidth = 260;
+  window.huaban_minHeight = 260;
+  var appendScript = function() {
+	var a   = d.createElement('script');
+	a.id    = 'huaban_share_script';
+	a.async = true;
+	a.setAttribute('charset','utf-8');
+	a.setAttribute('data-position', 'top right');
+	a.src   = ' http://huaban.com/js/pinmarklet.js?' + Math.floor(+new Date/1E7);
+	var s   = d.getElementsByTagName(t)[0];
+	s.parentNode.insertBefore(a, s);
+  }
+  if (window.attachEvent) {
+	window.attachEvent('onload', function(){setTimeout(appendScript, 1000);});
+  } else {
+	appendScript();
+  }
+})(document, 'script');
+
+var bds_config={"snsKey":{'tsina':'696316965','tqq':'a75e1c5904c842b7','t163':'','tsohu':''}}
+document.getElementById("bdshell_js").src = "http://bdimg.share.baidu.com/static/js/shell_v2.js?cdnversion=" + Math.ceil(new Date()/3600000);
+// BFD fetch
+window["_BFD"] = window["_BFD"] || {};
+_BFD.BFD_INFO = {"page_type" : "detail"};
+//]]>
+</script>
+<!-- BFD -->
+<script type="text/javascript">
+window["_BFD"] = window["_BFD"] || {};
+_BFD.client_id = "Czhongwenyejiezx";
+_BFD.script = document.createElement("script");
+_BFD.script.type = "text/javascript";
+_BFD.script.async = true;
+_BFD.script.charset = "utf-8";
+_BFD.script.src = (('https:' == document.location.protocol?'https://ssl-static1':'http://static1')+'.baifendian.com/service/zhongwenyejiezx/zhongwenyejiezx.js');
+document.getElementsByTagName("head")[0].appendChild(_BFD.script);
+(function(win,doc){
+    var s = doc.createElement("script"), h = doc.getElementsByTagName("head")[0];
+    if (!win.alimamatk_show) {
+        s.charset = "utf8";
+        s.async = true;
+        s.src = "http://a.alimama.cn/tkapi.js";
+        h.insertBefore(s, h.firstChild);
+    };
+    var o = {
+        pid: "mm_10007624_104555_13572417",/*推广单元ID，用于区分不同的推广渠道*/
+        appkey: "",/*通过TOP平台申请的appkey，设置后引导成交会关联appkey*/
+        unid: ""/*自定义统计字段*/
+    };
+    win.alimamatk_onload = win.alimamatk_onload || [];
+    win.alimamatk_onload.push(o);
+})(window,document);
+</script>
+<script type="text/javascript">
+/*<![CDATA[*/
+jQuery(function($) {
+
+$(document).on('click', '#seccode', function(){
+	$.ajax({
+		url: "\/captcha.htm?refresh=1",
+		dataType: 'json',
+		cache: false,
+		success: function(data) {
+			$('#seccode').attr('src', data['url']);
+			$('body').data('captcha.hash', [data['hash1'], data['hash2']]);
+		}
+	});
+	return false;
+});
+
+
+$(document).on('click', '#popup_seccode', function(){
+	$.ajax({
+		url: "\/captcha.htm?refresh=1",
+		dataType: 'json',
+		cache: false,
+		success: function(data) {
+			$('#popup_seccode').attr('src', data['url']);
+			$('body').data('captcha.hash', [data['hash1'], data['hash2']]);
+		}
+	});
+	return false;
+});
+
+});
+/*]]>*/
+</script>
+</body>
+</html>

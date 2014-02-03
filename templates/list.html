@@ -1,0 +1,19 @@
+{% extends 'layout.html' %}
+{% block news %}
+{% for n in paged.object_list %}
+<div class="blog-post">
+    <h2 class="blog-post-title"><a href="/news/{{ n.id }}">{{ n.title }}</a></h2>
+    <p class="blog-post-meta">{{ n.created_at }}</p>
+    {{ n.intro }}
+</div><!-- /.blog-post -->
+{% endfor %}
+
+<ul class="pager">
+    {% if paged.has_previous %}
+    <li><a href="/page/{{paged.previous_page_number}}">Previous</a></li>
+    {% endif %}
+    {% if paged.has_next %}
+    <li><a href="/page/{{paged.next_page_number}}">Next</a></li>
+    {% endif %}
+</ul>
+{% endblock %}

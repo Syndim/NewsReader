@@ -1,0 +1,21 @@
+{% extends 'layout.html' %}
+{% block news %}
+<div class="blog-post">
+    <h2 class="blog-post-title"><a href="/news/{{ news.id }}">{{ news.title }}</a></h2>
+    <p class="blog-post-meta">{{ news.created_at }}</p>
+    {{ news.intro }}
+    {% autoescape off %}
+    {{ news.content }}
+    {% endautoescape %}
+</div><!-- /.blog-post -->
+<hr />
+<div id="blog-comment">
+</div>
+
+<script type="text/javascript" src="/static/js/handlebars-v1.3.0.js"></script>
+
+<script type="text/javascript">
+    comments = "{{ comment.content }}".split(",");
+</script>
+<script type="text/javascript" src="/static/js/detail.js"></script>
+{% endblock %}

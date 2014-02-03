@@ -1,0 +1,4 @@
+Django==1.6.1
+django-bootstrap3==2.5.6
+pytz==2013.9
+requests==2.2.1
