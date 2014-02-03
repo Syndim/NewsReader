@@ -1,7 +1,7 @@
 {% extends 'layout.html' %}
 {% block news %}
 <div class="blog-post">
-    <h2 class="blog-post-title"><a href="/news/{{ news.id }}">{{ news.title }}</a></h2>
+    <h2 class="blog-post-title"><a href="http://www.cnbeta.com/articles/{{ news.origin_id }}.htm">{{ news.title }}</a></h2>
     <p class="blog-post-meta">{{ news.created_at }}</p>
     {{ news.intro }}
     {% autoescape off %}
