@@ -10,10 +10,10 @@
 
 <ul class="pager">
     {% if paged.has_previous %}
-    <li><a href="/page/{{paged.previous_page_number}}">Previous</a></li>
+    <li><a href="/news/page/{{paged.previous_page_number}}">Previous</a></li>
     {% endif %}
     {% if paged.has_next %}
-    <li><a href="/page/{{paged.next_page_number}}">Next</a></li>
+    <li><a href="/news/page/{{paged.next_page_number}}">Next</a></li>
     {% endif %}
 </ul>
 {% endblock %}
