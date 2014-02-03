@@ -76,9 +76,9 @@ WSGI_APPLICATION = 'newspaper.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.mysql',
-        'OPTIONS': {
-            'read_default_file': os.path.join(BASE_DIR, 'db.conf'),
-        }
+        'NAME': 'newspaper',
+        'USER': 'root',
+        'PASSWORD': '',
     }
 }
 
