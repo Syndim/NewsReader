@@ -8,7 +8,7 @@ import (
     "github.com/PuerkitoBio/goquery"
     "io"
     "io/ioutil"
-    "nc/helpers"
+    "newsreader/helpers"
     "regexp"
     "strconv"
     "strings"
