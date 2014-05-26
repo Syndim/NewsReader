@@ -18,7 +18,7 @@ getComment = (template, cmt, cmtList, cmtStore) ->
     }
 
 displayComments = (comments) ->
-    comments = JSON.parse atob(comment).substr(6) for comment in comments when comment
+    comments = JSON.parse atob(comment) for comment in comments when comment
     template = Handlebars.compile commentTemplate
     cmtResult = [getComment(template, comment, comments.cmntlist, comments.cmntstore) for comment in comments.cmntlist][0]
     hotCmtResult = [getComment(template, comment, comments.hotlist, comments.cmntstore) for comment in comments.hotlist][0]

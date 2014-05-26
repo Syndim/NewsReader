@@ -36,7 +36,7 @@
     for (_i = 0, _len = comments.length; _i < _len; _i++) {
       comment = comments[_i];
       if (comment) {
-        comments = JSON.parse(atob(comment).substr(6));
+        comments = JSON.parse(atob(comment));
       }
     }
     template = Handlebars.compile(commentTemplate);

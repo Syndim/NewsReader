@@ -232,8 +232,7 @@ func (this *Cnbeta) GetOpCode(page int, commentDetails *CommentDetails) string {
 }
 
 func (this *Cnbeta) GetComment(opCode string) (io.ReadCloser, error) {
-    opCodeWithSuffix := opCode + "1234567"
-    return helpers.PostUrl(this.commentUrl, "op="+opCodeWithSuffix, this.commentPostHeaders)
+    return helpers.PostUrl(this.commentUrl, "op="+opCode, this.commentPostHeaders)
 }
 
 func (this *Cnbeta) GetAllComments(newsId int) (*Comment, error) {
@@ -276,7 +275,7 @@ func (this *Cnbeta) GetAllComments(newsId int) (*Comment, error) {
         }
 
         var decodedCommentResultMap map[string]interface{}
-        json.Unmarshal(decodedCommentResult[6:], &decodedCommentResultMap)
+        json.Unmarshal(decodedCommentResult, &decodedCommentResultMap)
         if comments, ok := decodedCommentResultMap["cmntstore"]; ok && len(comments.(map[string]interface{})) > 0 {
             result = append(result, commentResult["result"])
             page++
