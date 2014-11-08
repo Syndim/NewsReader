@@ -28,6 +28,7 @@ const (
 type CommentDetails struct {
 	NewsId int
 	NewsSn string
+	Token  string
 }
 
 type News struct {
@@ -47,6 +48,7 @@ type Comment struct {
 type Cnbeta struct {
 	newsListUrlFormat  string
 	newsUrlRegex       *regexp.Regexp
+	tokenRegex         *regexp.Regexp
 	newsUrlFormat      string
 	commentUrl         string
 	commentDetailRegex *regexp.Regexp
@@ -61,6 +63,7 @@ func NewCnbeta() *Cnbeta {
 		newsUrlFormat:      "http://www.cnbeta.com/articles/%d.htm",
 		commentUrl:         "http://www.cnbeta.com/cmt",
 		commentDetailRegex: regexp.MustCompile(`{SID:"(\d+?)",.*?SN:"([0-9a-fA-F]+?)"}`),
+		tokenRegex:         regexp.MustCompile(`{{TOKEN:"([a-fA-F0-9]{40})"`),
 		commentPostHeaders: &map[string]string{
 			"Content-Type":     "application/x-www-form-urlencoded; charset=UTF-8",
 			"X-Requested-With": "XMLHttpRequest",
@@ -216,10 +219,12 @@ func (this *Cnbeta) GetCommentDetails(newsId int) (*CommentDetails, error) {
 	}
 
 	commentDetails := this.commentDetailRegex.FindSubmatch(pageContent)
+	token := this.tokenRegex.FindSubmatch(pageContent)
 
 	return &CommentDetails{
 		NewsId: newsId,
 		NewsSn: string(commentDetails[2]),
+		Token:  string(token[1]),
 	}, nil
 }
 
@@ -229,11 +234,11 @@ func (this *Cnbeta) GetOpCode(page int, commentDetails *CommentDetails) string {
 		page,
 		commentDetails.NewsId,
 		commentDetails.NewsSn)
-	return base64.StdEncoding.EncodeToString([]byte(opCodeStr))
+	return opCodeStr
 }
 
-func (this *Cnbeta) GetComment(opCode string) (io.ReadCloser, error) {
-	return helpers.PostUrl(this.commentUrl, "op="+opCode, this.commentPostHeaders)
+func (this *Cnbeta) GetComment(opCode string, token string) (io.ReadCloser, error) {
+	return helpers.PostUrl(this.commentUrl, "op="+opCode+"&csrf_token="+token, this.commentPostHeaders)
 }
 
 func (this *Cnbeta) GetAllComments(newsId int) (*Comment, error) {
@@ -248,7 +253,7 @@ func (this *Cnbeta) GetAllComments(newsId int) (*Comment, error) {
 
 	for {
 		opCode := this.GetOpCode(page, commentDetails)
-		commentBody, err := this.GetComment(opCode)
+		commentBody, err := this.GetComment(opCode, commentDetails.Token)
 		defer commentBody.Close()
 		if err != nil {
 			return nil, err
