@@ -2,11 +2,12 @@ package workers
 
 import (
 	"database/sql"
-	"encoding/base64"
 	"encoding/json"
 	"fmt"
 	"io"
 	"io/ioutil"
+	"newsreader/crawler/data"
+	data_sql "newsreader/crawler/data/sql"
 	"newsreader/crawler/helpers"
 	"regexp"
 	"strconv"
@@ -54,25 +55,46 @@ type Cnbeta struct {
 	commentDetailRegex *regexp.Regexp
 	commentPostHeaders *map[string]string
 	opCodeFormat       string
+	newsReadWriter     data.DataReadWriter
+	commentsReadWriter data.DataReadWriter
 }
 
-func NewCnbeta() *Cnbeta {
+func NewNewsReadWriter(db *sql.DB) data.DataReadWriter {
+	result := data_sql.NewSqlReadWriter(db)
+	result.InsertSqlFormat = NEWS_INSERT_SQL
+	result.SelectSqlFormat = NEWS_SELECT_SQL
+	return result
+}
+
+func NewCommentReadWriter(db *sql.DB) data.DataReadWriter {
+	result := data_sql.NewSqlReadWriter(db)
+	result.InsertSqlFormat = COMMENT_INSERT_SQL
+	result.SelectSqlFormat = COMMENT_SELECT_SQL
+	result.UpdateSqlFormat = COMMENT_UPDATE_SQL
+	return result
+}
+
+func NewCnbeta(newsReadWriter, commentsReadWriter data.DataReadWriter) *Cnbeta {
 	return &Cnbeta{
 		newsListUrlFormat:  "http://m.cnbeta.com/wap/index.htm?page=%d",
 		newsUrlRegex:       regexp.MustCompile(`/wap/view_(\d+)\.htm`),
 		newsUrlFormat:      "http://www.cnbeta.com/articles/%d.htm",
 		commentUrl:         "http://www.cnbeta.com/cmt",
 		commentDetailRegex: regexp.MustCompile(`{SID:"(\d+?)",.*?SN:"([0-9a-fA-F]+?)"}`),
-		tokenRegex:         regexp.MustCompile(`{{TOKEN:"([a-fA-F0-9]{40})"`),
+		tokenRegex:         regexp.MustCompile(`\s*TOKEN:\s*"([a-fA-F0-9]+)"`),
 		commentPostHeaders: &map[string]string{
 			"Content-Type":     "application/x-www-form-urlencoded; charset=UTF-8",
 			"X-Requested-With": "XMLHttpRequest",
+			"Origin":           "http://www.cnbeta.com",
+			"User-Agent":       "Mozilla/5.0 (Windows NT 6.3; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/38.0.2125.111 Safari/537.36",
 		},
-		opCodeFormat: "%d,%d,%s",
+		opCodeFormat:       "%d,%d,%s",
+		newsReadWriter:     newsReadWriter,
+		commentsReadWriter: commentsReadWriter,
 	}
 }
 
-func (this *Cnbeta) Start(db *sql.DB) error {
+func (this *Cnbeta) Start() error {
 	for page := 1; page <= MAX_PAGES; page++ {
 		newsIds, err := this.GetNewsList(page)
 		if err != nil {
@@ -81,20 +103,22 @@ func (this *Cnbeta) Start(db *sql.DB) error {
 
 		for _, newsId := range newsIds {
 			fmt.Println("Start processing NewsId: " + strconv.Itoa(newsId))
-			news, err := db.Query(NEWS_SELECT_SQL, newsId)
+			newsResult, err := this.newsReadWriter.Read(data_sql.SQL_SELECT, newsId)
 			if err != nil {
 				return err
 			}
 
-			if !news.Next() {
+			news, ok := newsResult.(*sql.Rows)
+
+			if !ok || !news.Next() {
 				fmt.Println("NewsId: " + strconv.Itoa(newsId) + " not found, crawling...")
 				news, err := this.GetNews(newsId)
 				if err != nil {
 					return err
 				}
 
-				_, err = db.Exec(
-					NEWS_INSERT_SQL,
+				err = this.newsReadWriter.Write(
+					data_sql.SQL_INSERT,
 					news.Title,
 					news.Intro,
 					news.Content,
@@ -106,7 +130,7 @@ func (this *Cnbeta) Start(db *sql.DB) error {
 				}
 			}
 
-			comment, err := db.Query(COMMENT_SELECT_SQL, newsId)
+			commentResult, err := this.commentsReadWriter.Read(data_sql.SQL_SELECT, newsId)
 			if err != nil {
 				return err
 			}
@@ -116,15 +140,17 @@ func (this *Cnbeta) Start(db *sql.DB) error {
 				return err
 			}
 
-			newCommentContent := strings.Join(newComment.Content, ",")
-			if comment.Next() {
+			newCommentContent := strings.Join(newComment.Content, "::::")
+
+			comment, ok := commentResult.(*sql.Rows)
+			if ok && comment.Next() {
 				fmt.Println("Found comment for NewsId: " + strconv.Itoa(newsId))
 				var commentContent string
 				comment.Scan(&commentContent)
 				if len(newCommentContent) > len(commentContent) {
 					fmt.Println("Updating comment for NewsId: " + strconv.Itoa(newsId))
-					_, err = db.Exec(
-						COMMENT_UPDATE_SQL,
+					err = this.commentsReadWriter.Write(
+						data_sql.SQL_UPDATE,
 						newComment.CnbetaId,
 						newCommentContent,
 						time.Now(),
@@ -135,8 +161,8 @@ func (this *Cnbeta) Start(db *sql.DB) error {
 				}
 			} else {
 				fmt.Println("Comment for newsId: " + strconv.Itoa(newsId) + " not found, adding...")
-				_, err = db.Exec(
-					COMMENT_INSERT_SQL,
+				err = this.commentsReadWriter.Write(
+					data_sql.SQL_INSERT,
 					newComment.CnbetaId,
 					newCommentContent,
 					time.Now())
@@ -180,12 +206,13 @@ func (this *Cnbeta) GetNews(newsId int) (*News, error) {
 
 func (this *Cnbeta) GetNewsList(pageNum int) ([]int, error) {
 	newsListUrl := fmt.Sprintf(this.newsListUrlFormat, pageNum)
+	fmt.Println("News list url: " + newsListUrl)
 	body, err := helpers.GetUrl(newsListUrl)
-	defer body.Close()
 	if err != nil {
 		return nil, err
 	}
 
+	defer body.Close()
 	pageContent, err := ioutil.ReadAll(body)
 	if err != nil {
 		return nil, err
@@ -238,7 +265,11 @@ func (this *Cnbeta) GetOpCode(page int, commentDetails *CommentDetails) string {
 }
 
 func (this *Cnbeta) GetComment(opCode string, token string) (io.ReadCloser, error) {
-	return helpers.PostUrl(this.commentUrl, "op="+opCode+"&csrf_token="+token, this.commentPostHeaders)
+	postContent := "op=" + opCode + "&csrf_token=" + token
+	fmt.Println("Post content: " + postContent)
+	headers := *this.commentPostHeaders
+	headers["Cookie"] = "csrf_token=" + token
+	return helpers.PostUrl(this.commentUrl, postContent, &headers)
 }
 
 func (this *Cnbeta) GetAllComments(newsId int) (*Comment, error) {
@@ -264,7 +295,7 @@ func (this *Cnbeta) GetAllComments(newsId int) (*Comment, error) {
 			return nil, err
 		}
 
-		var commentResult map[string]string
+		var commentResult map[string]interface{}
 		err = json.Unmarshal(commentContent, &commentResult)
 		if err != nil {
 			return nil, err
@@ -275,16 +306,14 @@ func (this *Cnbeta) GetAllComments(newsId int) (*Comment, error) {
 			continue
 		}
 
-		decodedCommentResult, err := base64.StdEncoding.DecodeString(commentResult["result"])
-		if err != nil {
-			return nil, err
-		}
-
-		var decodedCommentResultMap map[string]interface{}
-		json.Unmarshal(decodedCommentResult, &decodedCommentResultMap)
-		if comments, ok := decodedCommentResultMap["cmntstore"]; ok && len(comments.(map[string]interface{})) > 0 {
-			result = append(result, commentResult["result"])
-			page++
+		if comment, ok := commentResult["result"].(map[string]interface{}); ok {
+			if _, ok := comment["cmntstore"]; ok {
+				commentStr, _ := json.Marshal(comment)
+				result = append(result, string(commentStr))
+				page++
+			} else {
+				break
+			}
 		} else {
 			break
 		}

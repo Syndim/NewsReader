@@ -4,6 +4,7 @@ import (
 	"database/sql"
 	"fmt"
 	_ "github.com/go-sql-driver/mysql"
+	// "newsreader/crawler/data/console"
 	"newsreader/crawler/workers"
 	"os"
 )
@@ -15,8 +16,9 @@ func main() {
 	}
 	db, _ := sql.Open("mysql", os.Args[1])
 	defer db.Close()
-	cnbeta := workers.NewCnbeta()
-	err := cnbeta.Start(db)
+	cnbeta := workers.NewCnbeta(workers.NewNewsReadWriter(db), workers.NewCommentReadWriter(db))
+	// cnbeta := workers.NewCnbeta(new(console.ConsoleReadWriter), new(console.ConsoleReadWriter))
+	err := cnbeta.Start()
 	if err != nil {
 		fmt.Println(err)
 	}

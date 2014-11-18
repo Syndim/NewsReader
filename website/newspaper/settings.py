@@ -78,7 +78,7 @@ DATABASES = {
         'ENGINE': 'mysql_pymysql',
         'NAME': 'newspaper',
         'USER': 'root',
-        'PASSWORD': '',
+        'PASSWORD': 'root',
     }
 }
 
