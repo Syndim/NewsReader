@@ -15,6 +15,8 @@ NEWSREADER_DB_NAME = os.environ.get('NEWSREADER_DB_NAME') or 'newsreader'
 NEWSREADER_DB_USER = os.environ.get('NEWSREADER_DB_USER') or 'root'
 NEWSREADER_DB_PASS = os.environ.get('NEWSREADER_DB_PASS') or 'root'
 
+STATIC_ROOT = "/var/www/NewsReader/static"
+
 TEMPLATE_DIRS = (
     BASE_DIR + '/templates/'
 )
