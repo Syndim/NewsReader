@@ -44,7 +44,7 @@ class LatestEntriesFeed(Feed):
         return item.origin_site
 
     def item_pubdate(self, item):
-        return datetime.datetime.strptime(item.created_at + " +0800", "%Y-%m-%d %H:%M:%S %z")
+        return datetime.datetime.strptime(item.created_at + " +0800", "%Y-%m-%d %H:%M:%S")
 
     def item_content_encoded(self, item):
         return item.intro + item.content
